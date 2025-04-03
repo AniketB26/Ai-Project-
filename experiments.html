@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Experiments - Suggest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-indigo-900 to-purple-900 min-h-screen font-sans text-white">
+    <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-80 backdrop-blur-md shadow-lg z-10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-indigo-400 tracking-wide">SciPlay</h1>
+            <div class="space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Home Page">Home</a>
+                <a href="experiments.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Experiments Page">Experiments</a>
+                <a href="about.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to About Page">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-24 pb-20 max-w-5xl mx-auto px-6">
+        <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-10 text-center animate-fade-in tracking-tight drop-shadow-2xl">Suggest Your Experiments</h2>
+        
+        <div class="bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-8 animate-slide-up">
+            <label class="block text-gray-300 text-lg font-semibold mb-3" for="materials">Materials</label>
+            <input id="materials" type="text" placeholder="e.g., water, vinegar, baking soda" class="w-full p-4 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition mb-6">
+
+            <label class="block text-gray-300 text-lg font-semibold mb-3" for="category">Category</label>
+            <select id="category" class="w-full p-4 bg-gray-700 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition mb-8">
+                <option value="all">All Categories</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+                <option value="biology">Biology</option>
+            </select>
+
+            <div class="flex space-x-6">
+                <button id="suggestBtn" class="flex-1 bg-indigo-500 text-white py-4 rounded-lg hover:bg-indigo-600 transition transform hover:scale-105 shadow-lg" aria-label="Suggest Experiments">Suggest</button>
+                <button id="clearBtn" class="flex-1 bg-gray-600 text-white py-4 rounded-lg hover:bg-gray-700 transition transform hover:scale-105 shadow-lg" aria-label="Clear Form">Clear</button>
+            </div>
+
+            <div id="results" class="mt-8 space-y-6 hidden">
+                <h3 class="text-2xl font-semibold text-indigo-300">Suggestions</h3>
+                <div id="experimentList" class="space-y-6"></div>
+            </div>
+
+            <div id="loading" class="hidden flex justify-center mt-8">
+                <div class="animate-spin h-10 w-10 border-4 border-indigo-400 border-t-transparent rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fallback for when JavaScript is disabled -->
+    <noscript>
+        <p class="text-center text-gray-300">JavaScript is disabled. This page requires JavaScript to suggest experiments. Please enable JavaScript or visit the About page for more information.</p>
+    </noscript>
+
+    <script src="experiments.js"></script>
+    <script src="script.js"></script>
+    <!-- Note: Cloudflare will dynamically inject its challenge script here when the site is hosted behind Cloudflare. -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Experiments - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-indigo-900 to-purple-900 min-h-screen font-sans text-white">
+    <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-80 backdrop-blur-md shadow-lg z-10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-indigo-400 tracking-wide">SciPlay</h1>
+            <div class="space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Home Page">Home</a>
+                <a href="experiments.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Experiments Page">Experiments</a>
+                <a href="about.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to About Page">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('assets/stars-bg.jpg')] bg-cover opacity-20 z-0"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6">
+            <h2 class="text-6xl md:text-7xl font-extrabold text-white mb-6 animate-fade-in tracking-tight drop-shadow-2xl">Explore the Universe of Science</h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 animate-slide-up drop-shadow-md">Unleash your curiosity with AI-powered experiments using everyday materials.</p>
+            <a href="experiments.html" class="inline-block bg-indigo-500 text-white font-semibold py-4 px-8 rounded-full hover:bg-indigo-600 transition transform hover:scale-105 shadow-lg">Start Experimenting</a>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <h3 class="text-4xl font-bold text-indigo-300 mb-12 text-center animate-fade-in">Discover Cosmic Fun</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="image-card bg-gray-800 bg-opacity-50 rounded-xl shadow-lg" style="opacity: 0;">
+                <img src="experiment1.jpg" alt="Experiment 1" class="w-full h-72 object-cover rounded-t-xl" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Image+Not+Found';">
+                <p class="mt-4 text-gray-300 text-center font-medium pb-4">Volcano Eruption</p>
+            </div>
+            <div class="image-card bg-gray-800 bg-opacity-50 rounded-xl shadow-lg" style="opacity: 0;">
+                <img src="assets/experiment2.jpg" alt="Experiment 2" class="w-full h-72 object-cover rounded-t-xl" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Image+Not+Found';">
+                <p class="mt-4 text-gray-300 text-center font-medium pb-4">Density Tower</p>
+            </div>
+            <div class="image-card bg-gray-800 bg-opacity-50 rounded-xl shadow-lg" style="opacity: 0;">
+                <img src="assets/experiment3.jpg" alt="Experiment 3" class="w-full h-72 object-cover rounded-t-xl" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=Image+Not+Found';">
+                <p class="mt-4 text-gray-300 text-center font-medium pb-4">Slime Creation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fallback for when JavaScript is disabled -->
+    <noscript>
+        <style>
+            .image-card {
+                opacity: 1 !important;
+            }
+        </style>
+        <p class="text-center text-gray-300">JavaScript is disabled. Some animations may not work, but you can still explore the experiments!</p>
+    </noscript>
+
+    <script src="experiments.js"></script>
+    <script src="script.js"></script>
+    <!-- Note: Cloudflare will dynamically inject its challenge script here when the site is hosted behind Cloudflare. -->
+</body>
+</html>
