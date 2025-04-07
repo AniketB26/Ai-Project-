@@ -9,11 +9,6 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes scaleUp {
-    from { transform: scale(0.95); opacity: 0; filter: blur(2px); }
-    to { transform: scale(1); opacity: 1; filter: blur(0); }
-}
-
 /* Animation Classes */
 .animate-fade-in {
     animation: fadeIn 1.2s ease-in-out forwards;
@@ -27,32 +22,38 @@
     animation-delay: 0.2s;
 }
 
-/* Image Card Styling */
-.image-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+/* Team Card Styling with Size Variations */
+.team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
 
-.image-card:hover {
+.team-card:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    filter: brightness(1.1);
 }
 
-.image-card.animate {
-    animation: scaleUp 0.8s ease-out forwards;
+/* Size Variations */
+.team-card-sm {
+    min-height: 180px; /* Small size */
 }
 
-.image-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.team-card-md {
+    min-height: 220px; /* Medium size */
+}
+
+.team-card-lg {
+    min-height: 260px; /* Large size */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .image-card {
+    .team-card {
         margin-bottom: 2rem;
+    }
+
+    .team-card-sm, .team-card-md, .team-card-lg {
+        min-height: 200px; /* Normalize height on smaller screens */
     }
 
     .text-6xl {
