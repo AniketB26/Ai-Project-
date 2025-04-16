@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "node-fetch": "^2.6.12"
+  },
+  "name": "llama2-chatbot",
+  "version": "1.0.0",
+  "description": "A chatbot powered by Llama2 via Ollama API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

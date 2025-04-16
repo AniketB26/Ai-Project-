@@ -13,7 +13,7 @@
             <h1 class="text-3xl font-extrabold text-indigo-400 tracking-wide">SciPlay</h1>
             <div class="space-x-8">
                 <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Home Page">Home</a>
-                <a href="experiments.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Experiments Page">Experiments</a>
+                <a href="chatbot.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to Chatbot Page">Chatbot</a>
                 <a href="about.html" class="text-gray-300 hover:text-indigo-400 transition" aria-label="Go to About Page">About</a>
             </div>
         </div>
@@ -24,7 +24,7 @@
         <div class="relative z-10 max-w-5xl mx-auto px-6">
             <h2 class="text-6xl md:text-7xl font-extrabold text-white mb-6 animate-fade-in tracking-tight drop-shadow-2xl">Explore the Universe of Science</h2>
             <p class="text-xl md:text-2xl text-gray-300 mb-10 animate-slide-up drop-shadow-md">Unleash your curiosity with AI-powered experiments using everyday materials.</p>
-            <a href="experiments.html" class="inline-block bg-indigo-500 text-white font-semibold py-4 px-8 rounded-full hover:bg-indigo-600 transition transform hover:scale-105 shadow-lg">Start Experimenting</a>
+            <a href="chatbot.html" class="inline-block bg-indigo-500 text-white font-semibold py-4 px-8 rounded-full hover:bg-indigo-600 transition transform hover:scale-105 shadow-lg">Start Experimenting</a>
         </div>
     </section>
 
@@ -39,7 +39,7 @@
             </div>
             <div class="team-card team-card-sm bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-6 animate-slide-up delay-200">
                 <h4 class="text-xl font-semibold text-indigo-400 mb-4">Invisible Ink Secrets 🖌️</h4>
-                <p class="text-gray-300 mb-2"><span class="font-medium">What’s This?:</span> Write messages that disappear!</p>
+                <p class="text-gray-300 mb-2"><span class="font-medium">What's This?:</span> Write messages that disappear!</p>
                 <p class="text-gray-300">Use lemon juice—can you reveal the magic?</p>
             </div>
             <div class="team-card team-card-md bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-6 animate-slide-up delay-200">
@@ -49,7 +49,7 @@
             </div>
             <div class="team-card team-card-md bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-6 animate-slide-up">
                 <h4 class="text-xl font-semibold text-indigo-400 mb-4">Bubble Explosions 💧</h4>
-                <p class="text-gray-300 mb-2"><span class="font-medium">What’s Up:</span> Create giant bubbles that pop with surprises!</p>
+                <p class="text-gray-300 mb-2"><span class="font-medium">What's Up:</span> Create giant bubbles that pop with surprises!</p>
                 <p class="text-gray-300 mb-2"><span class="font-medium">Try This:</span> Soap and water—can you catch one?</p>
             </div>
             <div class="team-card team-card-lg bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-6 animate-slide-up delay-200">
@@ -61,7 +61,7 @@
             <div class="team-card team-card-sm bg-gray-800 bg-opacity-50 rounded-xl shadow-lg p-6 animate-slide-up delay-200">
                 <h4 class="text-xl font-semibold text-indigo-400 mb-4">Tiny Worlds 🌍</h4>
                 <p class="text-gray-300 mb-2"><span class="font-medium">Explore:</span> Look super close with a microscope!</p>
-                <p class="text-gray-300">What’s hiding in a drop of water?</p>
+                <p class="text-gray-300">What's hiding in a drop of water?</p>
             </div>
         </div>
     </section>
@@ -73,10 +73,26 @@
 
     <script src="experiments.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('fetchBtn').addEventListener('click', async () => {
+            const materials = ['water', 'sugar']; // Default materials, can be modified
+            const category = 'chemistry'; // Default category, can be modified
+            const resultDiv = document.getElementById('result');
+
+            try {
+                resultDiv.textContent = 'Fetching experiments...';
+                const experiments = await window.fetchExperiments(materials, category);
+                if (experiments.length && experiments[0].name !== 'Error') {
+                    resultDiv.textContent = JSON.stringify(experiments, null, 2);
+                } else {
+                    resultDiv.textContent = experiments[0].description + '\nSteps: ' + experiments[0].steps.join('\n');
+                }
+            } catch (error) {
+                console.error('Error in button click:', error);
+                resultDiv.textContent = 'An error occurred. Check the console for details.';
+            }
+        });
+    </script>
     <!-- Note: Cloudflare will dynamically inject its challenge script here when the site is hosted behind Cloudflare. -->
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92caba7409e48bb5',t:'MTc0NDA0MTUyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
-    <script src="script.js"></script>
-    <!-- Note: Cloudflare will dynamically inject its challenge script here when the site is hosted behind Cloudflare. -->
-</body>
 </html>
